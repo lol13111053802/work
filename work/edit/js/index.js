@@ -37,7 +37,7 @@ window.onload = function() {
         doneCon.innerHTML = p;
         num2.innerHTML = doneData.length;
     }
-    doingCon.onclick = function (event) {
+    doingCon.onclick = function fn1(event) {
         let tar = event.target;
         if (tar.className === "change") {
             let value = tar.nextElementSibling.innerText;
@@ -56,7 +56,7 @@ window.onload = function() {
             localStorage.doneData = doneData;
         }
     };
-    doneCon.onclick = function(event)
+    doneCon.onclick = function fn2(event)
     {
         let tar = event.target;
         if (tar.className === "down") {

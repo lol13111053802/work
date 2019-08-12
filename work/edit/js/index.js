@@ -1,18 +1,19 @@
 window.onload = function() {
-    let doingData = [];
-    let doneData = [];
+    let doingData = localStorage.doingData?localStorage.doingData.split(","):[]
+    let doneData = localStorage.doneData?localStorage.doneData.split(","):[]
     let num1 = document.getElementById("todocount");
     let num2 = document.getElementById("donecount");
     let input = document.getElementById("title");
     let doingCon = document.querySelector(".doing");
     let doneCon = document.querySelector(".done");
-    // let up = document.querySelectorAll(".up");
-    let down = document.querySelectorAll(".done a");
+    rend();
     input.onkeydown = function (e) {
         let s = e.keyCode;
         console.log(s);
         if (s === 13 && this.value != "") {
             doingData.unshift(this.value);
+            localStorage.doingData = doingData;
+            localStorage.doneData = doneData;
             rend();
             console.dir(doingData);
             this.value = "";
@@ -20,6 +21,8 @@ window.onload = function() {
 
     };
     function rend() {
+        localStorage.doingData = doingData;
+            localStorage.doneData = doneData;
         let d = "";
         doingData.forEach((item, index) => {
             d += `<div><input type="checkbox" class="change"><p>${item}</p><a class="up">☯</a></div>`;
@@ -41,14 +44,18 @@ window.onload = function() {
             let index = doingData.indexOf(value);
             doneData.unshift(doingData.splice(index, 1)[0]);
             rend();
+            localStorage.doingData = doingData;
+            localStorage.doneData = doneData;
         }
         else if(tar.className === "up")
         {doingData.length--;
             num1.innerHTML=doingData.length;
            console.log(tar.parentElement);
            doingCon.removeChild(tar.parentElement);
+           localStorage.doingData = doingData;
+            localStorage.doneData = doneData;
         }
-    }
+    };
     doneCon.onclick = function(event)
     {
         let tar = event.target;
@@ -57,6 +64,8 @@ window.onload = function() {
             doneCon.removeChild(tar.parentElement);
             doneData.length--;
             num2.innerHTML=doneData.length;
+            localStorage.doingData = doingData;
+            localStorage.doneData = doneData;
         }
     }
 

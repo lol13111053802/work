@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="js/index.js"></script>
     <title>Title</title>
     <style>
         *{
@@ -26,6 +27,7 @@
         body {
             margin: 0;
             padding: 0;
+            display: block;
             font-size: 16px;
             background: #CDCDCD;
         }
@@ -41,9 +43,11 @@
         }
         section {
              margin: 0 auto;
+            max-width:600px;
+            height:300px;
         }
         .hem{
-            width:600px;
+            max-width:600px;
             height:50px;
             position:relative;
             margin:0 auto;
@@ -52,10 +56,8 @@
             display: block;
             font-size: 1.5em;
             position:relative;
-            margin-block-start: 0.83em;
-            margin-block-end: 0.83em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
+            margin-top: 0.83em;
+            margin-bottom: 0.83em;
             font-weight: bold;
         }
         span {
@@ -63,26 +65,102 @@
             top: 2px;
             right: 5px;
             display: inline-block;
-            padding: 0 5px;
+            /*padding: 0 5px;*/
             height: 20px;
-            border-radius: 20px;
+            width:20px;
+            border-radius: 50%;
             background: #E6E6FA;
             line-height: 22px;
             text-align: center;
             color: #666;
             font-size: 14px;
         }
+        .doing{
+            max-width:600px;
+            height:auto;
+            /*background-color: white;*/
+            /*border-radius: 3px;*/
+           /*border-left: 5px solid #629A9C;*/
+        }
+        .doing>div{
+            max-width:600px;
+            position:relative;
+            height: 32px;
+            margin-top:15px;
+            background-color: white;
+            border-radius: 3px;
+           border-left: 5px solid #629A9C;
+        }
+        .doing>div>a{
+             display: block;
+            width:23px;
+            height:23px;
+            position:absolute;
+            right: 0;
+            text-decoration: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .doing>div>input{
+            margin-top:5px;
+            float: left;
+                margin-left: 5px;
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+        }
+        .done{
+             max-width:600px;
+            /*height: 32px;*/
+            /*border-radius: 3px;*/
+            /*background-color: lightgrey;*/
+            /*border-left: 5px solid #999*/
+            position:relative;
+        }
+        .done>div{
+             max-width:600px;
+            height: 32px;
+             margin-top:15px;
+            border-radius: 3px;
+            position:relative;
+            background-color: lightgrey;
+            border-left: 5px solid #999
+        }
+        .done>div>a{
+             display: block;
+            width:23px;
+            height:23px;
+            position:absolute;
+            right: 0;
+            font-size: 22px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .done>div>input{
+                float: left;
+                margin-top:5px;
+                margin-left: 5px;
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+        }
         footer {
             color: #666;
             font-size: 14px;
             text-align: center;
             display: block;
+            max-width:600px;
             position:relative;
-            margin: 50px auto;
+            margin: 0 auto;
         }
         footer a {
             text-decoration: none;
             color: #999;
+        }
+        p{
+            float: left;
+            height:32px;
+            line-height: 32px;
         }
     </style>
 </head>
@@ -94,10 +172,13 @@
     </div>
 </header>
 <section>
-		<div class="hem"><h2 onclick="save()">正在进行 <span id="todocount">0</span></h2>
-			<ol id="todolist" class="demo-box"></ol>
+		<div class="hem"><h2>正在进行 <span id="todocount">0</span></h2>
+			<div class="doing">
+                <!--<div><input type="checkbox"><p></p></div>-->
+            </div>
 			<h2>已经完成 <span id="donecount">0</span></h2>
-			<ul id="donelist"></ul>
+			<div  class="done">
+            </div>
         </div>
 </section>
 <footer>

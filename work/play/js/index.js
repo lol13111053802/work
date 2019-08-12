@@ -1,7 +1,6 @@
 let word1 = document.querySelectorAll("footer div div");
 let word2 = document.querySelectorAll(".h2 div");
 let word3 = document.querySelectorAll(".h3 div");
-let play = document.querySelector(".three");
 let worda = document.querySelectorAll(".word div");
 let word7 = document.querySelectorAll(".word7 div");
 let word8 = document.querySelectorAll(".word8 div");
@@ -11,9 +10,29 @@ document.addEventListener("keydown",function(){
         console.log("document 冒泡");
         // clearInterval(t);
     },false);
-play.touchstart = function(){
-    play.removeChild(img);
-};
+let down = 0;let index = 0;
+ function downing(){
+     worda[down].style.display = "block";
+     worda[down].top = 200*down;
+     word7[down].style.display = "block";
+     word7[down].top = 200*down;
+     word8[down].style.display = "block";
+     word8[down].top = 200*down;
+     word9[down].style.display = "block";
+     word9[down].top = 200*down;
+     if(index===6)
+     {
+         worda[down].style.display = "none";
+         word7[down].style.display = "none";
+         word8[down].style.display = "none";
+         word9[down].style.display = "none";
+         clearInterval(t);
+         console.log("停止");
+     }
+     down++;
+     index++;
+}
+ let t = setInterval(downing ,500);
     window.document.onkeydown = function key(e) {
         // setInterval(run,1000);
         let keynum = window.event ? e.keyCode : e.which;

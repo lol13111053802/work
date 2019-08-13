@@ -1,9 +1,12 @@
 window.onload = function() {
-    let doingData = localStorage.doingData?localStorage.doingData.split(","):[]
-    let doneData = localStorage.doneData?localStorage.doneData.split(","):[]
+    //localStorage.tolist = [{title:'abc'},{done:true}]
+    let doingData = localStorage.doingData?localStorage.doingData.split(","):[];
+    let doneData = localStorage.doneData?localStorage.doneData.split(","):[];
     let num1 = document.getElementById("todocount");
     let num2 = document.getElementById("donecount");
     let input = document.getElementById("title");
+    let clear = document.querySelector(".clear");
+
     let doingCon = document.querySelector(".doing");
     let doneCon = document.querySelector(".done");
     rend();
@@ -25,19 +28,20 @@ window.onload = function() {
             localStorage.doneData = doneData;
         let d = "";
         doingData.forEach((item, index) => {
-            d += `<div><input type="checkbox" class="change"><p>${item}</p><a class="up">☯</a></div>`;
+            d += `<div class="di"><input type="checkbox" class="change"><p class="p">${item}</p><a class="up">☯</a></div>`;
+
         });
         doingCon.innerHTML = d;
         num1.innerHTML = doingData.length;
         let p = "";
         doneData.forEach((item, index) => {
 
-            p += `<div><input  type="checkbox" class="change" checked><p>${item}</p><a class="down">☯</a></div>`;
+            p += `<div class="di"><input  type="checkbox" class="change" checked><p class="p">${item}</p><a class="down">☯</a></div>`;
         });
         doneCon.innerHTML = p;
         num2.innerHTML = doneData.length;
     }
-    doingCon.onclick = function fn1(event) {
+    doingCon.onclick = function(event) {
         let tar = event.target;
         if (tar.className === "change") {
             let value = tar.nextElementSibling.innerText;
@@ -56,10 +60,41 @@ window.onload = function() {
             localStorage.doneData = doneData;
         }
     };
-    doneCon.onclick = function fn2(event)
-    {
+    doingCon.ondblclick = function(event){
         let tar = event.target;
-        if (tar.className === "down") {
+        let p = doingData.length;
+         if (tar.className === "p") {
+             let oldtext = tar.innerText;
+            let input = document.createElement("input");
+            tar.innerText = "";
+            doingData.splice(p-1,1);
+            input.value = oldtext;
+            input.onblur = function () {//当失去焦点并且内容发生改变时触发
+                tar.innerText = this.value;
+                doingData.push(input.value);
+            localStorage.doingData = doingData;
+            localStorage.doneData = doneData;};
+            tar.appendChild(input);
+
+
+             console.dir(doingData);
+            input.focus();
+         }
+
+
+    };
+    doneCon.onclick = function(event)
+    {    let tar = event.target;
+         if (tar.className === "change") {
+            let value = tar.nextElementSibling.innerText;
+            let index = doneData.indexOf(value);
+            doingData.unshift(doneData.splice(index, 1)[0]);
+            rend();
+            localStorage.doingData = doingData;
+            localStorage.doneData = doneData;
+        }
+
+        else if (tar.className === "down") {
             console.log(doneData.length);
             doneCon.removeChild(tar.parentElement);
             doneData.length--;
@@ -67,11 +102,36 @@ window.onload = function() {
             localStorage.doingData = doingData;
             localStorage.doneData = doneData;
         }
+    };
+    doneCon.ondblclick = function(event){
+        let tar = event.target;
+        let p = doneData.length;
+         if (tar.className === "p") {
+             let oldtext = tar.innerText;
+            let input = document.createElement("input");
+            tar.innerText = "";
+            doneData.splice(p-1,1);
+            input.value = oldtext;
+            input.onblur = function () {//当失去焦点并且内容发生改变时触发
+                tar.innerText = this.value;
+                doneData.push(input.value);
+            localStorage.doingData = doingData;
+            localStorage.doneData = doneData;};
+            tar.appendChild(input);
+
+
+             console.dir(doneData);
+            input.focus();
+         }
+    };
+    clear.onclick = function(){
+        doingData.splice(0);
+        doneData.splice(0);
+        rend();
+        localStorage.doingData = doingData;
+        localStorage.doneData = doneData;
     }
-
-
-
-}
+};
 
 // let obj={'name':'小包'};
 //     function horns(a,b,c){

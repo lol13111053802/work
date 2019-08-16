@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <script src="js/rem.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <title>打字游戏</title>
 </head>
@@ -17,148 +18,40 @@
         <img src="img/Aplay.png">
     </div>
     <div>
-        <img  style="width:4.95rem;height:0.56rem;margin:0 auto;position: relative;top:0rem; display: block;" src="img/clound_06.png">
+        <img  style="width:4.95rem;height:0.56rem;margin:0 auto;z-index:160;position: relative;top:0; display: block;" src="img/clound_06.png">
     </div>
     <div style="position: relative;top:0">
 
         <div class="playArea"><!--字母移动区域-->
-             <div class="word"><!--字母出现横排-->
-                <div class="wordChild"><img src="img/A_Z/A.png"></div>
-                <div class="wordChild"><img src="img/A_Z/B.png"></div>
-                <div class="wordChild"><img src="img/A_Z/C.png"></div>
-                <div class="wordChild"><img src="img/A_Z/D.png"></div>
-                <div class="wordChild"><img src="img/A_Z/E.png"></div>
-                <div class="wordChild"><img src="img/A_Z/F.png"></div>
-                <div class="wordChild"><img src="img/A_Z/G.png"></div>
-                <div class="wordChild"><img src="img/A_Z/H.png"></div>
-                <div class="wordChild"><img src="img/A_Z/I.png"></div>
-                <div class="wordChild"><img src="img/A_Z/J.png"></div>
-                <div class="wordChild"><img src="img/A_Z/K.png"></div>
-                <div class="wordChild"><img src="img/A_Z/L.png"></div>
-                <div class="wordChild"><img src="img/A_Z/M.png"></div>
-                <div class="wordChild"><img src="img/A_Z/N.png"></div>
-                <div class="wordChild"><img src="img/A_Z/O.png"></div>
-                <div class="wordChild"><img src="img/A_Z/P.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Q.png"></div>
-                <div class="wordChild"><img src="img/A_Z/R.png"></div>
-                <div class="wordChild"><img src="img/A_Z/S.png"></div>
-                <div class="wordChild"><img src="img/A_Z/T.png"></div>
-                <div class="wordChild"><img src="img/A_Z/U.png"></div>
-                <div class="wordChild"><img src="img/A_Z/V.png"></div>
-                <div class="wordChild"><img src="img/A_Z/W.png"></div>
-                <div class="wordChild"><img src="img/A_Z/X.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Y.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Z.png"></div>
-            </div>
-             <div class="word7"><!--字母出现横排-->
-                <div class="wordChild"><img src="img/A_Z/A.png"></div>
-                <div class="wordChild"><img src="img/A_Z/B.png"></div>
-                <div class="wordChild"><img src="img/A_Z/C.png"></div>
-                <div class="wordChild"><img src="img/A_Z/D.png"></div>
-                <div class="wordChild"><img src="img/A_Z/E.png"></div>
-                <div class="wordChild"><img src="img/A_Z/F.png"></div>
-                <div class="wordChild"><img src="img/A_Z/G.png"></div>
-                <div class="wordChild"><img src="img/A_Z/H.png"></div>
-                <div class="wordChild"><img src="img/A_Z/I.png"></div>
-                <div class="wordChild"><img src="img/A_Z/J.png"></div>
-                <div class="wordChild"><img src="img/A_Z/K.png"></div>
-                <div class="wordChild"><img src="img/A_Z/L.png"></div>
-                <div class="wordChild"><img src="img/A_Z/M.png"></div>
-                <div class="wordChild"><img src="img/A_Z/N.png"></div>
-                <div class="wordChild"><img src="img/A_Z/O.png"></div>
-                <div class="wordChild"><img src="img/A_Z/P.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Q.png"></div>
-                <div class="wordChild"><img src="img/A_Z/R.png"></div>
-                <div class="wordChild"><img src="img/A_Z/S.png"></div>
-                <div class="wordChild"><img src="img/A_Z/T.png"></div>
-                <div class="wordChild"><img src="img/A_Z/U.png"></div>
-                <div class="wordChild"><img src="img/A_Z/V.png"></div>
-                <div class="wordChild"><img src="img/A_Z/W.png"></div>
-                <div class="wordChild"><img src="img/A_Z/X.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Y.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Z.png"></div>
-            </div>
-             <div class="word8"><!--字母出现横排-->
-                <div class="wordChild"><img src="img/A_Z/A.png"></div>
-                <div class="wordChild"><img src="img/A_Z/B.png"></div>
-                <div class="wordChild"><img src="img/A_Z/C.png"></div>
-                <div class="wordChild"><img src="img/A_Z/D.png"></div>
-                <div class="wordChild"><img src="img/A_Z/E.png"></div>
-                <div class="wordChild"><img src="img/A_Z/F.png"></div>
-                <div class="wordChild"><img src="img/A_Z/G.png"></div>
-                <div class="wordChild"><img src="img/A_Z/H.png"></div>
-                <div class="wordChild"><img src="img/A_Z/I.png"></div>
-                <div class="wordChild"><img src="img/A_Z/J.png"></div>
-                <div class="wordChild"><img src="img/A_Z/K.png"></div>
-                <div class="wordChild"><img src="img/A_Z/L.png"></div>
-                <div class="wordChild"><img src="img/A_Z/M.png"></div>
-                <div class="wordChild"><img src="img/A_Z/N.png"></div>
-                <div class="wordChild"><img src="img/A_Z/O.png"></div>
-                <div class="wordChild"><img src="img/A_Z/P.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Q.png"></div>
-                <div class="wordChild"><img src="img/A_Z/R.png"></div>
-                <div class="wordChild"><img src="img/A_Z/S.png"></div>
-                <div class="wordChild"><img src="img/A_Z/T.png"></div>
-                <div class="wordChild"><img src="img/A_Z/U.png"></div>
-                <div class="wordChild"><img src="img/A_Z/V.png"></div>
-                <div class="wordChild"><img src="img/A_Z/W.png"></div>
-                <div class="wordChild"><img src="img/A_Z/X.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Y.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Z.png"></div>
-            </div>
-             <div class="word9"><!--字母出现横排-->
-                <div class="wordChild"><img src="img/A_Z/A.png"></div>
-                <div class="wordChild"><img src="img/A_Z/B.png"></div>
-                <div class="wordChild"><img src="img/A_Z/C.png"></div>
-                <div class="wordChild"><img src="img/A_Z/D.png"></div>
-                <div class="wordChild"><img src="img/A_Z/E.png"></div>
-                <div class="wordChild"><img src="img/A_Z/F.png"></div>
-                <div class="wordChild"><img src="img/A_Z/G.png"></div>
-                <div class="wordChild"><img src="img/A_Z/H.png"></div>
-                <div class="wordChild"><img src="img/A_Z/I.png"></div>
-                <div class="wordChild"><img src="img/A_Z/J.png"></div>
-                <div class="wordChild"><img src="img/A_Z/K.png"></div>
-                <div class="wordChild"><img src="img/A_Z/L.png"></div>
-                <div class="wordChild"><img src="img/A_Z/M.png"></div>
-                <div class="wordChild"><img src="img/A_Z/N.png"></div>
-                <div class="wordChild"><img src="img/A_Z/O.png"></div>
-                <div class="wordChild"><img src="img/A_Z/P.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Q.png"></div>
-                <div class="wordChild"><img src="img/A_Z/R.png"></div>
-                <div class="wordChild"><img src="img/A_Z/S.png"></div>
-                <div class="wordChild"><img src="img/A_Z/T.png"></div>
-                <div class="wordChild"><img src="img/A_Z/U.png"></div>
-                <div class="wordChild"><img src="img/A_Z/V.png"></div>
-                <div class="wordChild"><img src="img/A_Z/W.png"></div>
-                <div class="wordChild"><img src="img/A_Z/X.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Y.png"></div>
-                <div class="wordChild"><img src="img/A_Z/Z.png"></div>
-            </div>
         </div>
         <div class="score"><!--记分区域-->
             <div class="one">
-                <div style="width:0.5rem;height: 0.5rem;position:absolute;bottom:2.1rem;right: 0.5rem;z-index:10;background-color: #ff6700">
+                <div  class="oo" style="width:0.5rem;height: 0.5rem;position:absolute;bottom:2.1rem;right: 0.5rem;z-index:10;font-size:0.3rem;text-align:center;line-height:0.5rem;">
                 </div>
                 <img src="img/Health.png">
 
             </div>
             <div class="two">
-                 <div style="width:0.5rem;height: 0.5rem;position:absolute;bottom:1.6rem;right: 0.5rem;z-index:10;background-color: #ff6700">
+                 <div class="tt" style="width:0.5rem;height: 0.5rem;position:absolute;bottom:1.6rem;right: 0.5rem;z-index:10;font-size:0.3rem;text-align:center;line-height:0.5rem;">
 
                 </div>
                 <img src="img/Point.png">
 
             </div>
             <div class="three">
-                <img src="img/Play.png">
+<!--                <img src="img/Play.png" style="cursor: pointer;">-->
             </div>
         </div>
-        <div style="position:absolute;left: 0;top:4.13rem;">
-            <img  style=" display: block;height: 2.07rem;"src="img/car.png">
+    <div class="car">
         </div>
     </div>
-
 </section>
+<div class="ggg">
+        <div class="gameOver">
+            <img src="img/gameover.png">
+            <div class="Score"></div>
+        </div>
+    </div>
 <footer>
     <div>
         <div class="word1">Q</div>
@@ -194,5 +87,4 @@
     </div>
 </footer>
 </body>
-<script src="js/index.js"></script>
 </html>

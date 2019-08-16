@@ -1,10 +1,11 @@
 window.onload = function ( ) {
 let word1 = document.querySelectorAll("footer");
 class Game {
-    constructor(screenClassName,keyBoard,btn,life,score,gameOver,Score,ggg) {
+    constructor(screenClassName,keyBoard,btn,life,score,gameOver,Score,ggg,start) {
         this.screen = document.querySelector(screenClassName);
         this.gameOver = document.querySelector(gameOver);
         this.Score = document.querySelector(Score);
+        this.start = document.querySelector(start);
         this.ggg = document.querySelector(ggg);
         this.life = document.querySelector(life);
         this.score = document.querySelector(score);
@@ -16,14 +17,14 @@ class Game {
         // this.kill();
         // this.over();
         this.p = document.createElement("p");
-        this.lifeNum = 20;
+        this.lifeNum = 8;
         this.p.innerHTML = `${this.lifeNum}`;
         this.life.appendChild(this.p);
 
 
 
         this.s = document.createElement("p");
-        this.scoreNum = 10;
+        this.scoreNum = 8;
         this.s.innerHTML = `${this.scoreNum}`;
         this.score.appendChild(this.s);
 
@@ -119,12 +120,13 @@ class Game {
     run() {
         this.t = setInterval(() => {
             this.letters.forEach((item, index) => {
-                item.node.style.top = item.top + 'rem';item.top += 0.3;
+                item.node.style.top = item.top + 'rem';item.top += 0.01;
                 if (item.top > 7) {
                     this.screen.removeChild(item.node);
                     this.letters.splice(index, 1);
                     this.makeWord(1);
                     this.lifeNum--;
+                     this.scoreNum--;
                     this.p.innerHTML = `${this.lifeNum}`;
                     this.life.appendChild(this.p);
                     if(this.lifeNum===0){
@@ -133,11 +135,15 @@ class Game {
                         this.isKill=false;
                         this.kill();
                         this.over();
+                        this.lifeNum = 8;
+                        this.p.innerHTML = `${this.lifeNum}`;
+                        this.scoreNum = 8;
+                        this.s.innerHTML = `${this.scoreNum}`;
                     }
                             }
 
             })
-        }, 500);
+        }, 20);
        ;
 
     }
@@ -146,7 +152,6 @@ class Game {
     kill(){
              this.KEY.forEach((item, index) => {
                 item.onclick=()=>{
-
                     if(!this.isKill)
                  {
                      return;
@@ -160,8 +165,10 @@ class Game {
                             this.ScoreNum = this.scoreNum;
                             return item;
                         }
+
                     });
-                    if(this.isKill) {
+
+                    if(index!=-1) {
                         this.removeChild(index);
 
                     }
@@ -170,13 +177,25 @@ class Game {
 
     }
     over(){
-        if(this.lifeNum===0) {
+        if(this.lifeNum===0||this.scoreNum===0) {
             // console.dir(this.gameOver);
-            this.ggg.setAttribute("style","background-color:rgba(0,0,0,0.5);height: 11rem;width: 7.5rem;top:-4rem;display: block;right: 0;position: relative;z-index: 45604561234;overflow: hidden;");
-            this.gameOver.setAttribute( "style","width:7.5rem;position: absolute;top:0;display: block;height: 10rem;z-index: 300;");
-
+            this.ggg.setAttribute("style","display:block");
+            this.gameOver.setAttribute( "style","display: block;");
+            this.start.setAttribute( "style","width:2.63rem;display: block;height:0.6rem;z-index: 10000;position: absolute;top:8.5rem;;left: 2.5rem");
             this.ScoreNum = this.scoreNum;
             this.Score.innerText = `${this.ScoreNum}`;
+
+        this.start.onclick=()=> {
+            this.ggg.setAttribute("style", "display:none");
+            this.gameOver.setAttribute("style", "display: none;");
+            this.start.setAttribute("style", "width:2.63rem;display: none;height:0.6rem;z-index: 10000;position: absolute;top:8.5rem;;left: 2.5rem");
+            this.Score.innerText = "";
+            this.run();
+            this.isKill = true;
+
+
+
+        }
         }
     }
 
@@ -188,7 +207,7 @@ class Game {
 
 }
 
-let game = new Game(".playArea","footer div div",".three",".oo",".tt",".gameOver img",".Score",".ggg");
+let game = new Game(".playArea","footer div div",".three",".oo",".tt",".img",".Score",".ggg",".start");
 setInterval(game.play(),500);
 // game.kill();
 document.addEventListener("keydown", function () {

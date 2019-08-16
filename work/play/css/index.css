@@ -31,12 +31,15 @@ footer{
     height:3.5rem;
     background-color: rgba(36,109,216,0.7);
     position: absolute;
-    left: 0.5rem;
+    left: 0.65rem;
     bottom:0.5rem;
 }
 footer div{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     height:25%;
-    width:5rem;
+    width:6rem;
     margin: 0 auto;
     position:relative;
     text-align: center;
@@ -45,8 +48,11 @@ footer div{
 }
 
 .h2{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
      height:25%;
-    width:4.5rem;
+    width:5.5rem;
     margin: 0 auto;
     position:relative;
     text-align: center;
@@ -55,7 +61,10 @@ footer div{
 
 .h3{
      height:25%;
-    width:3.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width:4.5rem;
     margin: 0 auto;
     position:relative;
     text-align: center;
@@ -72,18 +81,22 @@ footer div{
     z-index: 15;
      text-align: center;
     line-height: 0.8rem;
-    float:left;
-    font-size: 0.3rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-size: 0.28rem;
     color: black;
 }
 .playArea{
-    width:4rem;
-    height:6.2rem;
-    margin:0 auto;
-    background-color: rgba(91,203,23,0.5);
-    position:relative;
+    width:4.5rem;
+    height:6.8rem;
+    /*background-color: rgba(91,203,23,0.5);*/
+    position:absolute;
+    left:1.53rem;
+    top:-0.3rem;
     overflow: hidden;
-    z-index: 20;
+    z-index: 30;
+
 }
 .word{
     width:1rem;
@@ -119,7 +132,7 @@ footer div{
 .wordChild{
     width:0.53rem;
     height:0.77rem;
-     /*display: none;*/
+     display: none;
     /*position:relative;*/
 }
 .wordChild img{
@@ -166,20 +179,74 @@ footer div{
     position: absolute;
     bottom:1rem;
     right:0.1rem;
+
 }
-
-
-
 .three{
-    height:1rem;
-    width:1.5rem;
-      position:relative;
-}
-.three img{
-    display: block;
-    width:1.3rem;
     height:1.3rem;
+    width:1.3rem;
+    position:relative;
+    background: url("../img/Pause.png") no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    margin-top: -0.5rem;
+    z-index: 100;
+}
+.letter{
+    width:0.5rem;
+    height:0.8rem;
+    /*float: left;*/
+    /*float: left;*/
+
+    z-index: 35;
+}
+.car{
+     position:absolute;
+    /*right: -2rem;*/
+    top:4.55rem;
+    background: url("../img/car.png") no-repeat;
+    background-size: cover;
+    height: 2.07rem;
+    width: 3rem;
+    z-index: 1;
+}
+.img{
+    width:7.5rem;
     position: absolute;
-    bottom:0.5rem;
-    right:0.1rem;
+    top:0;
+    left:0.13rem;
+    display: none;
+    height: 10rem;
+    z-index: 300;
+
+}
+.Score{
+    z-index:44563;
+    text-align:center;
+    line-height:0.7rem;
+    width:0.7rem;
+    height:0.7rem;
+    position:relative;
+    top:6.35rem;
+    left:4rem;
+    font-size: 0.7rem;
+    color: yellow;
+}
+.ggg{
+    background-color:rgba(0,0,0,0.5);
+    height: 11rem;
+    top:-2rem;
+    display: none;
+    right: 0;
+    position: relative;
+    z-index: 45604561234;
+    overflow: hidden;
+}
+.start{
+    width:2.63rem;
+    display: none;
+    height:0.6rem;
+    z-index: 10000;
+    position: absolute;
+    top:8.5rem;
+    left: 2.5rem;
 }

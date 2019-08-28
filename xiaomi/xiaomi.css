@@ -282,17 +282,17 @@ input{
 }
 .dhbottom{
     width: 100%;
-    height: 230px;
     background-color: white;
     position: absolute;
     left: 0;
     right: 100px;
-    /*z-index: 2;*/
       z-index: 787;
     display: none;
 }
 .dh:hover .dhbottom{
-    display: block;
+    transition: all 3ms;
+
+    /*display: block;*/
 }
 .xiala{
     width:1226px;

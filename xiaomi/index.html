@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1303387_bhmcpqgx8bw.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1303387_l34leud7vu.css">
     <script src="js/animate.js"></script>
+    <script src="js/jQuery.js"></script>
 </head>
 <body>
 <div class="site-topbar">
@@ -1367,6 +1368,7 @@
 
                 </div></div>
         </div>
+
         <!--<div class="lunboright">-->
            <!---->
         <!--</div>-->
@@ -2372,7 +2374,40 @@
 </script>
 <!--<script>-->
 
+<script>
 
+$(document).ready(function(){
+    let tag=0;
+    $(".daohanglan").mouseenter(function(){
+        tag=3;
+        console.log("daohanglan移入");
+    });
+     $('.dh').hover(function(){
+            $(this).mouseenter(function(){
+                tag=1;
+                console.log("dh移入");
+            });
+            if(tag===1)
+                {
+
+                    $(this).children('.dhbottom').css({height:230}).css({display:"block"}).show();
+
+                }
+                if(tag===3){
+                    $(this).children('.dhbottom').animate({height:230},500).show();
+
+
+                }
+      },function(){
+            $(this).children('.dhbottom').animate({height: 0}, 500).hide();
+
+    });
+
+});
+
+
+
+        </script>
 <!--lunbo(".left", ".right", ".dian", ".img", ".l")-->
 <!--</script>-->
 </html>
